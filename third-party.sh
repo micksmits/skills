@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Installs the third-party skills I use, globally, from their original sources.
-# My own skills live in ./skills; install them with: npx skills add micksmits/skills -g
+# My own skills are this repository, checked out as ~/.agents/skills.
 set -euo pipefail
 
 add() { npx -y skills add "$@" -g -y; }

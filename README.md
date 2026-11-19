@@ -2,12 +2,15 @@
 
 Agent skills I wrote for myself.
 
-```sh
-npx skills add micksmits/skills -g
-```
+This repository is checked out as `~/.agents/skills`, the folder agents load skills from. The skills CLI installs third-party skills into the same folder, so `.gitignore` ignores every skill folder except my own. When adding a skill, add `!/<name>/` to `.gitignore`.
 
-Third-party skills I use stay with their publishers. `third-party.sh` installs them from their original sources:
+## Set up a new machine
 
 ```sh
-./third-party.sh
+git clone git@github.com:micksmits/skills.git ~/.agents/skills
+~/.agents/skills/third-party.sh
 ```
+
+Third-party skills stay with their publishers. `third-party.sh` installs them from their original sources, and `npx skills update -g` keeps them current.
+
+Don't run `npx skills add micksmits/skills -g` on a machine with this checkout: it would install over the skill folders here.

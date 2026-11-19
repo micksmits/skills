@@ -1,0 +1,5 @@
+# This checkout is ~/.agents/skills, where the skills CLI also installs
+# third-party skills. Ignore every skill folder except my own.
+/*/
+!/pr/
+!/offboard/
