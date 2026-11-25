@@ -12,9 +12,23 @@ Deliver a PR link and CodeRabbit's suggested fixes. Leave implementation of thos
 1. Inspect repository instructions, the working tree, branch, remote, default branch, and PR template. Identify the task's complete diff, including untracked source files; preserve unrelated work and exclude secrets and local artifacts.
 2. Run the relevant checks. Record actual results, skipped checks, and existing blockers for the PR body.
 3. Follow the repository's branch naming rules. Move off a placeholder branch before committing or pushing. Stage only the intended files, inspect the staged diff, commit, and push with an upstream.
-4. Reuse an existing PR for this branch, or create a ready-for-review PR against the intended base using the repository template. Describe behavior, verification, migrations, and important caveats. Add screenshots for UI changes when available; keep debugging artifacts out of the commit.
+4. Reuse an existing PR for this branch, or create a ready-for-review PR against the intended base using the repository template. Describe behavior, verification, migrations, and important caveats. Add screenshots for UI changes when available; keep debugging artifacts out of the commit. Write the title and description as described in Writing the PR.
 
 Complete when GitHub returns the PR URL and its head SHA matches the pushed work.
+
+### Writing the PR
+
+Adapted from t3dotgg/tstack `file-pr` (MIT).
+
+PR titles usually become commit messages, so follow the repository's title conventions; look at recently merged PRs and Git history for examples. Prefer a concise, human-readable title that explains why the change matters:
+
+- Bad: `perf(server): negotiate permessage-deflate on the websocket`
+- Good: `perf(server): cut websocket frame size by 70%+ with gzipping`
+
+Open the description (in the template's summary section, when there is one) with a simple explanation of the problem, based on the user's original request, then briefly explain the solution. Do not lead with an implementation inventory:
+
+- Bad: "Removed implicit workspace carry-over from every "new thread" entry point (cmd+n / cmd+shift+o, sidebar v1/v2 buttons, command palette). New threads inherit only the project from context; branch, worktree, and env mode always come from the configured defaults. Deleted buildContextualThreadOptions, startNewThreadInProjectFromContext, and the v1 sidebar's seed-context machinery."
+- Good: "My "new worktree" default was ignored when starting new threads on existing worktrees. Super unintuitive. Now your preferences always apply."
 
 ## Wait for CodeRabbit
 
