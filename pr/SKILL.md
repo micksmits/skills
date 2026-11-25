@@ -18,8 +18,6 @@ Complete when GitHub returns the PR URL and its head SHA matches the pushed work
 
 ### Writing the PR
 
-Adapted from t3dotgg/tstack `file-pr` (MIT).
-
 PR titles usually become commit messages, so follow the repository's title conventions; look at recently merged PRs and Git history for examples. Prefer a concise, human-readable title that explains why the change matters:
 
 - Bad: `perf(server): negotiate permessage-deflate on the websocket`
