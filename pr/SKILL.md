@@ -20,13 +20,13 @@ Complete when GitHub returns the PR URL and its head SHA matches the pushed work
 
 PR titles usually become commit messages, so follow the repository's title conventions; look at recently merged PRs and Git history for examples. Prefer a concise, human-readable title that explains why the change matters:
 
-- Bad: `perf(server): negotiate permessage-deflate on the websocket`
-- Good: `perf(server): cut websocket frame size by 70%+ with gzipping`
+- Bad: `fix(db): use isPersonVisibleToTeam in withPerson and createInteraction`
+- Good: `fix(db): let team members open and refresh profiles of funnel leads`
 
 Open the description (in the template's summary section, when there is one) with a simple explanation of the problem, based on the user's original request, then briefly explain the solution. Do not lead with an implementation inventory:
 
-- Bad: "Removed implicit workspace carry-over from every "new thread" entry point (cmd+n / cmd+shift+o, sidebar v1/v2 buttons, command palette). New threads inherit only the project from context; branch, worktree, and env mode always come from the configured defaults. Deleted buildContextualThreadOptions, startNewThreadInProjectFromContext, and the v1 sidebar's seed-context machinery."
-- Good: "My "new worktree" default was ignored when starting new threads on existing worktrees. Super unintuitive. Now your preferences always apply."
+- Bad: "Added `isVisibleToTeam` and `isPersonVisibleToTeam` to `network.ts`. `crm-people.ts` now uses them for profile reads and updates instead of the inline `connections` subquery, and `createInteraction` uses them too."
+- Good: "Refreshing a funnel lead's profile failed with 'Person is not in this team's network', because leads from Sales Navigator aren't connections. Team members can now open, refresh and log interactions on their own active leads."
 
 ## Wait for CodeRabbit
 
